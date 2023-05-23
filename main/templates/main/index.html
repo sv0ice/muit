@@ -1,10 +1,50 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>git</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="{% static 'main/css/style.css' %}"/>
+  <title>Обучение Git</title>
 </head>
 <body>
-    <h1>program works</h1>
+  <header>
+    <h1>Обучение Git</h1>
+  </header>
+
+  <main>
+    <h2>Введение в Git</h2>
+    <p>Git — это распределенная система контроля версий, широко используемая для контроля версий и совместной работы над проектами.</p>
+
+    <h2>Basic Git Commands</h2>
+    <ul>
+      <li>git init - creates a new Git repository.</li>
+      <li>git clone - copies a repository to the local machine.</li>
+      <li>git add - adds files to the staging area.</li>
+      <li>git commit - saves changes in the repository.</li>
+      <li>git push - sends changes to a remote server.</li>
+      <li>git pull - retrieves the latest changes from a remote server.</li>
+    </ul>
+
+    <h2>Working with Branches</h2>
+    <p>Git allows creating and managing branches, making parallel development and change integration easier.</p>
+
+    <h2>Additional Resources</h2>
+    <ul>
+      <li><a href="https://git-scm.com/doc">Official Git Documentation</a></li>
+      <li><a href="https://learngitbranching.js.org/">Interactive Git Tutorial</a></li>
+    </ul>
+  </main>
+
+  <aside>
+    <h2>Git Command Window</h2>
+    <textarea id="git-command"></textarea>
+    <button onclick="runGitCommand()">Run Command</button>
+    <div id="output"></div>
+  </aside>
+  
+  <script src="script.js"></script>
+  
 </body>
 </html>
