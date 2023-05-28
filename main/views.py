@@ -9,6 +9,9 @@ def index(request):
 def index2(request):
     return render(request, 'main/index2.html')
 
+def about_us(request):
+    return render(request, 'main/about.html')
+
 def lesson_list(request):
     lessons = Lesson.objects.all()
     return render(request, 'main/lesson_list.html', {'lessons': lessons})
