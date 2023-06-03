@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git упражнения</title>
+  <link rel="stylesheet" href="{% static 'main/css/bg.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+</head>
+<!--<div class="image_fon"></div>-->
+<body id="bg" style="background-image: url('{% static 'main/image/main_bg.jpg' %}');">
+<header class="header">
+  <div class="container">
+    <div class="header__inner">
+
+      <div class="header__top">
+        <nav class="menu">
+          <ul class="menu__list">
+            <li class="menu__item">
+              <a class="menu__link" href="{% url 'home' %}">
+                ГЛАВНОЕ МЕНЮ
+              </a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="{% url 'exercise' %}">
+                УПРАЖНЕНИЯ
+              </a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">
+                ДОП. УСЛУГИ
+              </a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="{% url 'about_us' %}">
+                О НАС
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+          <button class="login">
+            <a href="{% url 'login' %}">
+            <img class="login__img" src="{% static 'main/image/login.png' %}" alt="login img" >
+            </a>
+          </button>
+      </div>
+
+
+      <div class="header__content-ex">
+<!--        <h2 class="main__h2">Введение в Git</h2>-->
+<!--        <p>Git — это распределенная система контроля версий, широко используемая для контроля версий и совместной работы над проектами.</p>-->
+<!--        <p>Git — это распределенная система контроля версий, широко используемая для контроля версий и совместной работы над проектами.</p>-->
+<!--        <p>Git — это распределенная система контроля версий, широко используемая для контроля версий и совместной работы над проектами.</p>-->
+<!--        <p>Git — это распределенная система контроля версий, широко используемая для контроля версий и совместной работы над проектами.</p>-->
+<!--        <p>Git — это распределенная система контроля версий, широко используемая для контроля версий и совместной работы над проектами.</p>-->
+<!--        <div class="w3-sidebar w3-collapse" id="sidenav">-->
+          <nav class="sidebar">
+            <div class="scrollbox">
+              <div class="scrollbox-inner">
+                <!--  <a href='javascript:void(0)' onclick='close_menu()' class='w3-button w3-hide-large w3-large w3-display-topright' style='right:16px;padding:3px 12px;font-weight:bold;'>&times;</a>-->
+                <h2 class="left"><span class="left_h2">Git</span> Tutorial</h2>
+                <a target="_top" href="default.asp?remote=github">Git HOME</a>
+                <a target="_top" href="git_intro.asp?remote=github">Git Intro</a>
+                <a target="_top" href="git_getstarted.asp?remote=github">Git Get Started</a>
+                <a target="_top" href="git_new_files.asp?remote=github">Git New Files</a>
+                <a target="_top" href="git_staging_environment.asp?remote=github">Git Staging Environment</a>
+                <a target="_top" href="git_commit.asp?remote=github">Git Commit</a>
+                <a target="_top" href="git_help.asp?remote=github">Git Help</a>
+                <a target="_top" href="git_branch.asp?remote=github">Git Branch</a>
+                <a target="_top" href="git_branch_merge.asp?remote=github">Git Branch Merge</a>
+                <br>
+                <h2 class="left"><span class="left_h2">Git</span> and GitHub</h2>
+                <a target="_top" href="git_remote_getstarted.asp?remote=github">GitHub Get Started</a>
+                <a target="_top" href="git_remote_edit_code.asp?remote=github">GitHub Edit Code</a>
+                <a target="_top" href="git_pull_from_remote.asp?remote=github">Pull from GitHub</a>
+                <a target="_top" href="git_push_to_remote.asp?remote=github">Push to GitHub</a>
+                <a target="_top" href="git_remote_branch.asp?remote=github">GitHub Branch</a>
+                <a target="_top" href="git_branch_pull_from_remote.asp?remote=github">Pull Branch from GitHub</a>
+                <a target="_top" href="git_branch_push_to_remote.asp?remote=github">Push Branch to GitHub</a>
+                <a target="_top" href="git_github_flow.asp?remote=github">GitHub Flow</a>
+                <a target="_top" href="git_remote_pages.asp?remote=github">GitHub Pages</a>
+                <br>
+                <h2 class="left"><span class="left_h2">Git</span> Contribute</h2>
+                <a target="_top" href="git_remote_fork.asp?remote=github">GitHub Fork</a>
+                <a target="_top" href="git_clone.asp?remote=github">Git Clone from GitHub</a>
+                <a target="_top" href="git_remote_send_pull_request.asp?remote=github">GitHub Send Pull Request</a>
+                <br>
+                <h2 class="left"><span class="left_h2">Git</span> Advanced</h2>
+                <a target="_top" href="git_ignore.asp?remote=github">Git .gitignore</a>
+                <a target="_top" href="git_security_ssh.asp?remote=github">Git Security SSH</a>
+                <a target="_top" href="git_remote_add_ssh.asp?remote=github">GitHub Add SSH</a>
+                <br>
+                <h2 class="left"><span class="left_h2">Git</span> Undo</h2>
+                <a target="_top" href="git_revert.asp?remote=github">Git Revert</a>
+                <a target="_top" href="git_reset.asp?remote=github">Git Reset</a>
+                <a target="_top" href="git_amend.asp?remote=github">Git Amend</a>
+                <!--
+                 <a target="_top" href="git_rebase.asp">Git Rebase</a>
+                 <a target="_top" href="git_reflog.asp">Git Reflog</a>
+                 -->
+                <br>
+                <h2 class="left"><span class="left_h2">Git</span> Exercises</h2>
+                <a target="_top" href="git_exercises.asp?remote=github" class="active">Git Exercises</a>
+                <a target="_top" href="git_quiz.asp?remote=github">Git Quiz</a>
+                <br><br>
+                <h2 class="left"><span class="left_h2">Git</span> Tutorial</h2>
+                <a target="_top" href="default.asp?remote=github">Git HOME</a>
+                <a target="_top" href="git_intro.asp?remote=github">Git Intro</a>
+                <a target="_top" href="git_getstarted.asp?remote=github">Git Get Started</a>
+                <a target="_top" href="git_new_files.asp?remote=github">Git New Files</a>
+                <a target="_top" href="git_staging_environment.asp?remote=github">Git Staging Environment</a>
+                <a target="_top" href="git_commit.asp?remote=github">Git Commit</a>
+                <a target="_top" href="git_help.asp?remote=github">Git Help</a>
+                <a target="_top" href="git_branch.asp?remote=github">Git Branch</a>
+                <a target="_top" href="git_branch_merge.asp?remote=github">Git Branch Merge</a>
+                <br>
+                <h2 class="left"><span class="left_h2">Git</span> and GitHub</h2>
+                <a target="_top" href="git_remote_getstarted.asp?remote=github">GitHub Get Started</a>
+                <a target="_top" href="git_remote_edit_code.asp?remote=github">GitHub Edit Code</a>
+                <a target="_top" href="git_pull_from_remote.asp?remote=github">Pull from GitHub</a>
+                <a target="_top" href="git_push_to_remote.asp?remote=github">Push to GitHub</a>
+                <a target="_top" href="git_remote_branch.asp?remote=github">GitHub Branch</a>
+                <a target="_top" href="git_branch_pull_from_remote.asp?remote=github">Pull Branch from GitHub</a>
+                <a target="_top" href="git_branch_push_to_remote.asp?remote=github">Push Branch to GitHub</a>
+                <a target="_top" href="git_github_flow.asp?remote=github">GitHub Flow</a>
+                <a target="_top" href="git_remote_pages.asp?remote=github">GitHub Pages</a>
+                <br>
+                <h2 class="left"><span class="left_h2">Git</span> Contribute</h2>
+                <a target="_top" href="git_remote_fork.asp?remote=github">GitHub Fork</a>
+                <a target="_top" href="git_clone.asp?remote=github">Git Clone from GitHub</a>
+                <a target="_top" href="git_remote_send_pull_request.asp?remote=github">GitHub Send Pull Request</a>
+                <br>
+                <h2 class="left"><span class="left_h2">Git</span> Advanced</h2>
+                <a target="_top" href="git_ignore.asp?remote=github">Git .gitignore</a>
+                <a target="_top" href="git_security_ssh.asp?remote=github">Git Security SSH</a>
+                <a target="_top" href="git_remote_add_ssh.asp?remote=github">GitHub Add SSH</a>
+                <br>
+                <h2 class="left"><span class="left_h2">Git</span> Undo</h2>
+                <a target="_top" href="git_revert.asp?remote=github">Git Revert</a>
+                <a target="_top" href="git_reset.asp?remote=github">Git Reset</a>
+                <a target="_top" href="git_amend.asp?remote=github">Git Amend</a>
+                <!--
+                 <a target="_top" href="git_rebase.asp">Git Rebase</a>
+                 <a target="_top" href="git_reflog.asp">Git Reflog</a>
+                 -->
+                <br>
+                <h2 class="left"><span class="left_h2">Git</span> Exercises</h2>
+                <a target="_top" href="git_exercises.asp?remote=github" class="active">Git Exercises</a>
+                <a target="_top" href="git_quiz.asp?remote=github">Git Quiz</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

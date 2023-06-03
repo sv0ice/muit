@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <link rel="stylesheet" href="{% static 'main/css/bg.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+</head>
+<body id="bg" style="background-image: url('{% static 'main/image/main_bg.jpg' %}');">
+  <header class="header">
+    <div class="container">
+      <div class="header__inner-about">
+
+        <div class="header__top">
+          <nav class="menu">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a class="menu__link" href="{% url 'home' %}">
+                  ГЛАВНОЕ МЕНЮ
+              </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="{% url 'exercise' %}">
+                  УПРАЖНЕНИЯ
+              </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">
+                  ДОП. УСЛУГИ
+              </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="{% url 'about_us' %}">
+                  О НАС
+              </a>
+              </li>
+            </ul>
+          </nav>
+
+          <button class="login">
+            <a href="{% url 'login' %}">
+            <img class="login__img" src="{% static 'main/image/login.png' %}" alt="login img" >
+            </a>
+          </button>
+        </div>
+
+        <div class="header__content-about">
+          <h2 class="about__us">About Us</h2>
+          <div class="creators">
+            <div class="creator">
+              <div class="avatar">
+                <img src="{% static 'main/image/дамир.jpg' %}" alt="Creator 1">
+              </div>
+              <h3 class="authors__name">Sakhitzhan Damir</h3>
+              <p class="specialization">Frontend</p>
+            </div>
+            <div class="creator">
+              <div class="avatar">
+                <img src="{% static 'main/image/Aldik.jpg' %}" alt="Creator 2">
+              </div>
+              <h3 class="authors__name">Rakhimov Aldiyar</h3>
+              <p class="specialization">Backend</p>
+            </div>
+            <div class="creator">
+              <div class="avatar">
+                <img src="{% static 'main/image/aisan1.jpg' %}" alt="Creator 3">
+              </div>
+              <h3 class="authors__name">Sarsen Aisan</h3>
+              <p class="specialization">Project Manager</p>
+            </div>
+            <div class="creator">
+              <div class="avatar">
+                <img src="{% static 'main/image/erasyl.jpg' %}" alt="Creator 4">
+              </div>
+              <h3 class="authors__name">Negmet Erasyl</h3>
+              <p class="specialization">Data analyst</p>
+            </div>
+            <div class="creator">
+              <div class="avatar">
+                <img src="{% static 'main/image/tamer.jpg' %}" alt="Creator 5">
+              </div>
+              <h3 class="authors__name">Darzhanov Tamerlan</h3>
+              <p class="specialization">Backend</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+</body>
+</html>
