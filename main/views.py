@@ -6,11 +6,15 @@ from django.contrib import messages
 def index(request):
     return render(request, 'main/index.html')
 
-def index2(request):
-    return render(request, 'main/index2.html')
+def exercise(request):
+    return render(request, 'main/exercise.html')
 
 def about_us(request):
     return render(request, 'main/about.html')
+
+def login(request):
+    return render(request, 'main/login.html')
+
 
 def lesson_list(request):
     lessons = Lesson.objects.all()
