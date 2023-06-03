@@ -5,16 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обучение Git</title>
 <!--     <link rel="stylesheet" href="{% static 'main/css/reset.css' %}">-->
 <!--     <link rel="stylesheet" href="{% static 'main/css/slick.css' %}">-->
 <!--     <link rel="stylesheet" href="{% static 'main/css/jquery.fancybox.css' %}">-->
      <link rel="stylesheet" href="{% static 'main/css/bg.css' %}">
      <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
-
-  <title>Обучение Git</title>
 </head>
 <body id="bg" style="background-image: url('{% static 'main/image/main_bg.jpg' %}');">
-  <header class="header header-main">
+  <header class="header">
     <div class="container">
       <div class="header__inner">
 
@@ -27,7 +26,7 @@
               </a>
               </li>
               <li class="menu__item">
-                <a class="menu__link" href="#">
+                <a class="menu__link" href="{% url 'exercise' %}">
                   УПРАЖНЕНИЯ
               </a>
               </li>
@@ -37,49 +36,46 @@
               </a>
               </li>
               <li class="menu__item">
-                <a class="menu__link" href="#">
-                  ГАРАНТИИ
-              </a>
-              </li>
-              <li class="menu__item">
                 <a class="menu__link" href="{% url 'about_us' %}">
                   О НАС
               </a>
               </li>
             </ul>
           </nav>
-          <a  class="phone" href="tel:080000000000">0 800 000 000 00</a>
+
           <button class="login">
+            <a href="{% url 'login' %}">
             <img class="login__img" src="{% static 'main/image/login.png' %}" alt="login img" >
+            </a>
           </button>
         </div>
 
         <div class="header__content">
-          <h2>Введение в Git</h2>
+          <h2 class="main__h2">Введение в Git</h2>
           <p>Git — это распределенная система контроля версий, широко используемая для контроля версий и совместной работы над проектами.</p>
 
-          <h2>Basic Git Commands</h2>
-          <ul>
-            <li>git init - creates a new Git repository.</li>
-            <li>git clone - copies a repository to the local machine.</li>
-            <li>git add - adds files to the staging area.</li>
-            <li>git commit - saves changes in the repository.</li>
-            <li>git push - sends changes to a remote server.</li>
-            <li>git pull - retrieves the latest changes from a remote server.</li>
+          <h2 class="main__h2">Basic Git Commands</h2>
+          <ul class="content__list">
+            <li class="content__item">git init - creates a new Git repository.</li>
+            <li class="content__item">git clone - copies a repository to the local machine.</li>
+            <li class="content__item">git add - adds files to the staging area.</li>
+            <li class="content__item">git commit - saves changes in the repository.</li>
+            <li class="content__item">git push - sends changes to a remote server.</li>
+            <li class="content__item">git pull - retrieves the latest changes from a remote server.</li>
           </ul>
 
-          <h2>Working with Branches</h2>
+          <h2 class="main__h2">Working with Branches</h2>
           <p>Git allows creating and managing branches, making parallel development and change integration easier.</p>
 
-          <h2>Additional Resources</h2>
-          <ul>
-            <li><a href="https://git-scm.com/doc">Official Git Documentation</a></li>
-            <li><a href="https://learngitbranching.js.org/">Interactive Git Tutorial</a></li>
+          <h2 class="main__h2">Additional Resources</h2>
+          <ul class="content__list">
+            <li class="content__item"><a href="https://git-scm.com/doc">Official Git Documentation</a></li>
+            <li class="content__item"><a href="https://learngitbranching.js.org/">Interactive Git Tutorial</a></li>
           </ul>
         </div>
 
         <aside class="input_cmd">
-          <h2>Git Command Window</h2>
+          <h2 class="main__h2">Git Command Window</h2>
           <textarea id="git-command"></textarea>
           <button onclick="runGitCommand()">Run Command</button>
           <div id="output"></div>
@@ -89,8 +85,6 @@
     </div>
   </header>
 
-
-  
   <script src="script.js"></script>
   
 </body>
