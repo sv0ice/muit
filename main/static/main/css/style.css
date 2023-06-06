@@ -12,7 +12,7 @@ a{
 
 body{
     font-family: 'sf-pro-display';
-    font-size: 16px;
+    font-size: 21px;
     line-height: 19px;
     font-weight: normal;
     color: #fff;
@@ -65,19 +65,25 @@ body{
 
 .login {
     margin-bottom: 10px;
+    margin-right: 30px;
 }
 
 .header__content {
     color: #fff;
     background-color: #333;
     opacity: 0.8;
-    padding: 10px;
+    padding: 10px 20px;
+    margin: 30px 0 auto;
 }
 
 h1 {
-  margin: 0;
+    font-size: 42px;
+    margin: 36.84px 0px 50px;
   }
 
+h2 {
+    font-size: 32px;
+}
   /*
   main {
     max-width: 800px;
@@ -95,7 +101,8 @@ h1 {
   .content__item {
     margin-bottom: 10px;
   }
-  
+
+  /*
   aside {
     max-width: 400px;
     margin: 20px auto;
@@ -108,7 +115,7 @@ h1 {
   .main__h2 {
     margin-top: 0;
   }
-  
+
   textarea {
     width: 100%;
     height: 100px;
@@ -125,6 +132,7 @@ h1 {
     padding: 10px;
     background-color: #fff;
   }
+  */
 /* ----- EXERCISE STYLE -----*/
 
 /*
@@ -135,6 +143,7 @@ h1 {
 
 .header__content-ex {
     min-height: 100vh;
+    display: flex;
 }
 
 ::-webkit-scrollbar {
@@ -142,7 +151,7 @@ h1 {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #fff;
+    background: linear-gradient(#333, white);
     border-radius: 10px;
 }
 .sidebar {
@@ -164,7 +173,7 @@ h1 {
 }
 
 .left {
-    font-size: 21px;
+    font-size: 24px;
     padding-left: 16px;
     /*
     margin: -4px 0 4px 0;
@@ -181,6 +190,149 @@ h1 {
 
 }
 
+.mainContent-wrap {
+    color: #fff;
+    background-color: #333;
+    opacity: 0.8;
+    padding: 20px;
+    margin-left: 220px;
+    width: 100%;
+}
+
+.mainContent-wrap-ul {
+    color: #fff;
+    background-color: #333;
+    opacity: 0.8;
+    padding: 20px;
+    margin-left: 220px;
+    width: 100%;
+    line-height: 1.5;
+}
+
+ul {
+    line-height: 1.5;
+}
+.w3-info {
+    background-color: #D9EEE1;
+    border-left: none;
+    padding: 20px;
+    margin: 24px;
+    border-radius: 20px;
+    /*
+    margin-left: -32px;
+    margin-right: -32px;
+    */
+}
+
+.w3-example {
+    padding: 20px;
+    margin: 24px;
+    box-shadow: none!important;
+    background-color: #f3ecea;
+    color: #000;
+    border-radius: 20px;
+}
+
+#w3-exerciseform .exercisewindow {
+    background-color: #ffffff;
+    padding: 16px;
+    color: #000000;
+}
+
+#w3-exerciseform {
+    padding: 20px;
+    margin: 32px -20px;
+    background-color: darkslategrey;
+}
+
+.exerciseprecontainer {
+    background-color: #E7E9EB;
+    padding: 16px;
+    font-size: 120%;
+    font-family: Consolas,Menlo,"Courier New", Courier, monospace;
+    overflow: auto;
+}
+
+.exerciseprecontainer input {
+    padding: 1px;
+    border: 1px solid transparent;
+    height: 1.3em;
+}
+
+.w3-margin-bottom {
+    margin-bottom: 16px!important;
+}
+
+#w3-exerciseform .w3-btn {
+    border-radius: 5px;
+    font-size: 17px;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 7px 18px;
+}
+
+.w3-btn, .w3-btn:link, .w3-btn:visited {
+    color: #FFFFFF;
+    background-color: #4CAF50;
+}
+
+.w3-note, .w3-warning {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    padding: 16px 32px;
+    background-color: #ffffcc;
+    color: #333;
+}
+
+.w3-note-info {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    padding: 16px 32px;
+    background-color: lightgreen;
+    color: #333;
+}
+
+.w3-codespan {
+    font-size: 105%;
+    background-color: rgba(222,222,222,0.3);
+    color: crimson;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+/* === NEXTPREV BUTTONS === */
+.w3-clear:before {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.w3-clear:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.w3-clear {
+    display: flex;
+    justify-content: space-between;
+}
+.w3-btn {
+    padding: 8px 16px;
+    cursor: pointer;
+}
+.nextprev a.w3-right, .nextprev a.w3-left {
+    background-color: #04AA6D;
+    color: #ffffff;
+    border-color: #04AA6D;
+}
+
+.nextprev a {
+    font-size: 18px;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding-left: 19px;
+    padding-right: 19px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
 /* ----- ABOUT US STYLE -----*/
 
 .header__inner-about {
