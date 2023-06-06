@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Output</title>
+</head>
+<body>
+    <div style="position:relative;width:100%;" class="notranslate">
+      <div id="assignmentNotCorrect" onclick="closeNotCorrect(event)">
+        <h2>Not Correct</h2>
+        <p>Click <u>here</u> to try again.</p>
+      </div>
+      <div id="assignmentCorrect" onclick="nextexercise()">
+        <h2>Correct!</h2>
+        <span style="cursor:pointer" id="correctnextbtn">Next ❯</span>
+  </div>
+
+  <pre id="assignmentcontainer" style="overflow:auto">
+git <pre class="meassureInputWidth" style="display: none;">w3exercise_input_no_0</pre><input spellcheck="false" class="editablesection" onkeypress="checkKey(event)" oninput="writinginput(this, 0)" maxlength="6" style="width: 63px;"> <pre class="meassureInputWidth" style="display: none;">w3exercise_input_no_1</pre><input spellcheck="false" class="editablesection" onkeypress="checkKey(event)" oninput="writinginput(this, 1)" maxlength="2" style="width: 24px;"> "First release!"
+</pre>
+  <pre id="showcorrectanswercontainer" style="overflow:auto"></pre>
+
+  <button class="w3s-exercisebtn showanswerbutton hide-from-small ga-exercise" type="button" onclick="showanswer();uic_r_p();">Show Answer</button>
+  <button class="w3s-exercisebtn hideanswerbutton hide-from-small ga-exercise" style="display:none;" type="button" onclick="hideanswer();uic_r_p();">Hide Answer</button>
+</div>
+</body>
+</html>
