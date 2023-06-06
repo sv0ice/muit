@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git упражнения</title>
+  <link rel="stylesheet" href="{% static 'main/css/bg.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+</head>
+<!--<div class="image_fon"></div>-->
+<body id="bg" style="background-image: url('{% static 'main/image/main_bg.jpg' %}');">
+<header class="header">
+  <div class="container">
+    <div class="header__inner">
+
+      <div class="header__top">
+        <nav class="menu">
+          <ul class="menu__list">
+            <li class="menu__item">
+              <a class="menu__link" href="{% url 'home' %}">
+                ГЛАВНОЕ МЕНЮ
+              </a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="{% url 'exercise' %}">
+                УПРАЖНЕНИЯ
+              </a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">
+                ДОП. УСЛУГИ
+              </a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="{% url 'about_us' %}">
+                О НАС
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+          <button class="login">
+            <a href="{% url 'login' %}">
+            <img class="login__img" src="{% static 'main/image/login.png' %}" alt="login img" >
+            </a>
+          </button>
+      </div>
+
+
+      <div class="header__content-ex">
+<!--        <h2 class="main__h2">Введение в Git</h2>-->
+<!--        <p>Git — это распределенная система контроля версий, широко используемая для контроля версий и совместной работы над проектами.</p>-->
+<!--        <p>Git — это распределенная система контроля версий, широко используемая для контроля версий и совместной работы над проектами.</p>-->
+<!--        <p>Git — это распределенная система контроля версий, широко используемая для контроля версий и совместной работы над проектами.</p>-->
+<!--        <p>Git — это распределенная система контроля версий, широко используемая для контроля версий и совместной работы над проектами.</p>-->
+<!--        <p>Git — это распределенная система контроля версий, широко используемая для контроля версий и совместной работы над проектами.</p>-->
+<!--        <div class="w3-sidebar w3-collapse" id="sidenav">-->
+          <nav class="sidebar">
+            <div class="scrollbox">
+              <div class="scrollbox-inner">
+                <!--  <a href='javascript:void(0)' onclick='close_menu()' class='w3-button w3-hide-large w3-large w3-display-topright' style='right:16px;padding:3px 12px;font-weight:bold;'>&times;</a>-->
+                <h2 class="left"><span class="left_h2">Git</span> Tutorial</h2>
+                <a target="_top" href="{% url 'exercise' %}">Git HOME</a><br>
+                <a target="_top" href="{% url 'exercise2' %}">Git Intro</a><br>
+                <a target="_top" href="{% url 'exercise3' %}">Git Get Started</a><br>
+                <a target="_top" href="{% url 'exercise4' %}">Git New Files</a><br>
+                <a target="_top" href="{% url 'exercise5' %}">Git Staging Environment</a><br>
+                <a target="_top" href="{% url 'exercise6' %}">Git Commit</a><br>
+                <a target="_top" href="{% url 'exercise7' %}">Git Help</a><br>
+                <a target="_top" href="git_branch.asp?remote=github">Git Branch</a><br>
+                <a target="_top" href="git_branch_merge.asp?remote=github">Git Branch Merge</a>
+                <br>
+                <h2 class="left"><span class="left_h2">Git</span> and GitHub</h2>
+                <a target="_top" href="git_remote_getstarted.asp?remote=github">GitHub Get Started</a><br>
+                <a target="_top" href="git_remote_edit_code.asp?remote=github">GitHub Edit Code</a><br>
+                <a target="_top" href="git_pull_from_remote.asp?remote=github">Pull from GitHub</a><br>
+                <a target="_top" href="git_push_to_remote.asp?remote=github">Push to GitHub</a><br>
+                <a target="_top" href="git_remote_branch.asp?remote=github">GitHub Branch</a><br>
+                <a target="_top" href="git_branch_pull_from_remote.asp?remote=github">Pull Branch from GitHub</a><br>
+                <a target="_top" href="git_branch_push_to_remote.asp?remote=github">Push Branch to GitHub</a><br>
+                <a target="_top" href="git_github_flow.asp?remote=github">GitHub Flow</a><br>
+                <a target="_top" href="git_remote_pages.asp?remote=github">GitHub Pages</a>
+                <br>
+                <h2 class="left"><span class="left_h2">Git</span> Contribute</h2>
+                <a target="_top" href="git_remote_fork.asp?remote=github">GitHub Fork</a><br>
+                <a target="_top" href="git_clone.asp?remote=github">Git Clone from GitHub</a><br>
+                <a target="_top" href="git_remote_send_pull_request.asp?remote=github">GitHub Send Pull Request</a>
+                <br>
+                <h2 class="left"><span class="left_h2">Git</span> Advanced</h2>
+                <a target="_top" href="git_ignore.asp?remote=github">Git .gitignore</a><br>
+                <a target="_top" href="git_security_ssh.asp?remote=github">Git Security SSH</a><br>
+                <a target="_top" href="git_remote_add_ssh.asp?remote=github">GitHub Add SSH</a>
+                <br>
+                <h2 class="left"><span class="left_h2">Git</span> Undo</h2>
+                <a target="_top" href="git_revert.asp?remote=github">Git Revert</a><br>
+                <a target="_top" href="git_reset.asp?remote=github">Git Reset</a><br>
+                <a target="_top" href="git_amend.asp?remote=github">Git Amend</a>
+                <!--
+                 <a target="_top" href="git_rebase.asp">Git Rebase</a>
+                 <a target="_top" href="git_reflog.asp">Git Reflog</a>
+                 -->
+                <br>
+                <h2 class="left"><span class="left_h2">Git</span> Exercises</h2>
+                <a target="_top" href="git_exercises.asp?remote=github" class="active">Git Exercises</a><br>
+                <a target="_top" href="git_quiz.asp?remote=github">Git Quiz</a>
+                <br><br>
+              </div>
+            </div>
+          </nav>
+
+          <div class="mainContent-wrap">
+            <section class="mainContent">
+            <h1> Git Staging Environment</h1>
+              <hr>
+            <h2>Git Staging Environment</h2>
+            <p>Одной из основных функций Git являются концепции промежуточной среды и фиксации.</p>
+            <p>Во время работы вы можете добавлять, редактировать и удалять файлы. Но всякий раз, когда вы достигаете важной вехи или завершаете часть работы, вам следует добавлять файлы в промежуточную среду.</p>
+              <p><strong>Staged</strong> файлы - это файлы, которые готовы к <strong>commit</strong> в репозиторий, над которым вы работаете. Вскоре вы узнаете больше о фиксации.</p>
+            <p>На данный момент мы закончили работать с index.html . Таким образом, мы можем добавить его в промежуточную среду (staging env):</p>
+
+            <div class="w3-example">
+              <h3>Example</h3>
+              <p>$ git add index.html</p>
+            </div>
+            <p>Файл должен быть подготовлен. Давайте проверим статус:</p>
+            <div class="w3-example">
+              <h3>Example</h3>
+              <p>$ git status</p>
+              <p>On branch master</p>
+              <p></p>
+              <p>No commits yet</p>
+              <p></p>
+              <p>Changes to be committed:</p>
+              (use "git rm --cached ..." to unstage)
+              <p>new file: index.html</p>
+            </div>
+            <p>Теперь файл добавлен в промежуточную среду.</p>
+
+            <form autocomplete="off" id="w3-exerciseform" action="{% url 'run_script_ex3' %}" method="post">
+              {% csrf_token %}
+              <h2>Test Yourself With Exercises</h2>
+              <div class="exercisewindow">
+                <h2>Exercise:</h2>
+                <p>Добавьте index.html в промежуточную среду:</p>
+                <div class="exerciseprecontainer">
+                <pre>git <input type="text" name="input" maxlength="3" style="width: 75px;"></pre>
+                </div>
+                <br>
+                <button type="submit" class="w3-btn w3-margin-bottom">Submit Answer »</button>
+              </div>
+            </form>
+
+<!--            === NEXTPREV BUTTONS ===-->
+            <div class="w3-clear nextprev">
+              <a class="w3-left w3-btn" href="{% url 'exercise4' %}">❮ Previous</a>
+              <a class="w3-right w3-btn" href="{% url 'exercise6' %}">Next ❯</a>
+            </div>
+          </section>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

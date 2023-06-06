@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git упражнения</title>
+  <link rel="stylesheet" href="{% static 'main/css/bg.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+</head>
+<!--<div class="image_fon"></div>-->
+<body id="bg" style="background-image: url('{% static 'main/image/main_bg.jpg' %}');">
+<header class="header">
+  <div class="container">
+    <div class="header__inner">
+
+      <div class="header__top">
+        <nav class="menu">
+          <ul class="menu__list">
+            <li class="menu__item">
+              <a class="menu__link" href="{% url 'home' %}">
+                ГЛАВНОЕ МЕНЮ
+              </a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="{% url 'exercise' %}">
+                УПРАЖНЕНИЯ
+              </a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">
+                ДОП. УСЛУГИ
+              </a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="{% url 'about_us' %}">
+                О НАС
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+          <button class="login">
+            <a href="{% url 'login' %}">
+            <img class="login__img" src="{% static 'main/image/login.png' %}" alt="login img" >
+            </a>
+          </button>
+      </div>
+
+
+      <div class="header__content-ex">
+<!--        <h2 class="main__h2">Введение в Git</h2>-->
+<!--        <p>Git — это распределенная система контроля версий, широко используемая для контроля версий и совместной работы над проектами.</p>-->
+<!--        <p>Git — это распределенная система контроля версий, широко используемая для контроля версий и совместной работы над проектами.</p>-->
+<!--        <p>Git — это распределенная система контроля версий, широко используемая для контроля версий и совместной работы над проектами.</p>-->
+<!--        <p>Git — это распределенная система контроля версий, широко используемая для контроля версий и совместной работы над проектами.</p>-->
+<!--        <p>Git — это распределенная система контроля версий, широко используемая для контроля версий и совместной работы над проектами.</p>-->
+<!--        <div class="w3-sidebar w3-collapse" id="sidenav">-->
+          <nav class="sidebar">
+            <div class="scrollbox">
+              <div class="scrollbox-inner">
+                <!--  <a href='javascript:void(0)' onclick='close_menu()' class='w3-button w3-hide-large w3-large w3-display-topright' style='right:16px;padding:3px 12px;font-weight:bold;'>&times;</a>-->
+                <h2 class="left"><span class="left_h2">Git</span> Tutorial</h2>
+                <a target="_top" href="{% url 'exercise' %}">Git HOME</a><br>
+                <a target="_top" href="{% url 'exercise2' %}">Git Intro</a><br>
+                <a target="_top" href="{% url 'exercise3' %}">Git Get Started</a><br>
+                <a target="_top" href="{% url 'exercise4' %}">Git New Files</a><br>
+                <a target="_top" href="{% url 'exercise5' %}">Git Staging Environment</a><br>
+                <a target="_top" href="{% url 'exercise6' %}">Git Commit</a><br>
+                <a target="_top" href="{% url 'exercise7' %}">Git Help</a><br>
+                <a target="_top" href="git_branch.asp?remote=github">Git Branch</a><br>
+                <a target="_top" href="git_branch_merge.asp?remote=github">Git Branch Merge</a>
+                <br>
+                <h2 class="left"><span class="left_h2">Git</span> and GitHub</h2>
+                <a target="_top" href="git_remote_getstarted.asp?remote=github">GitHub Get Started</a><br>
+                <a target="_top" href="git_remote_edit_code.asp?remote=github">GitHub Edit Code</a><br>
+                <a target="_top" href="git_pull_from_remote.asp?remote=github">Pull from GitHub</a><br>
+                <a target="_top" href="git_push_to_remote.asp?remote=github">Push to GitHub</a><br>
+                <a target="_top" href="git_remote_branch.asp?remote=github">GitHub Branch</a><br>
+                <a target="_top" href="git_branch_pull_from_remote.asp?remote=github">Pull Branch from GitHub</a><br>
+                <a target="_top" href="git_branch_push_to_remote.asp?remote=github">Push Branch to GitHub</a><br>
+                <a target="_top" href="git_github_flow.asp?remote=github">GitHub Flow</a><br>
+                <a target="_top" href="git_remote_pages.asp?remote=github">GitHub Pages</a>
+                <br>
+                <h2 class="left"><span class="left_h2">Git</span> Contribute</h2>
+                <a target="_top" href="git_remote_fork.asp?remote=github">GitHub Fork</a><br>
+                <a target="_top" href="git_clone.asp?remote=github">Git Clone from GitHub</a><br>
+                <a target="_top" href="git_remote_send_pull_request.asp?remote=github">GitHub Send Pull Request</a>
+                <br>
+                <h2 class="left"><span class="left_h2">Git</span> Advanced</h2>
+                <a target="_top" href="git_ignore.asp?remote=github">Git .gitignore</a><br>
+                <a target="_top" href="git_security_ssh.asp?remote=github">Git Security SSH</a><br>
+                <a target="_top" href="git_remote_add_ssh.asp?remote=github">GitHub Add SSH</a>
+                <br>
+                <h2 class="left"><span class="left_h2">Git</span> Undo</h2>
+                <a target="_top" href="git_revert.asp?remote=github">Git Revert</a><br>
+                <a target="_top" href="git_reset.asp?remote=github">Git Reset</a><br>
+                <a target="_top" href="git_amend.asp?remote=github">Git Amend</a>
+                <!--
+                 <a target="_top" href="git_rebase.asp">Git Rebase</a>
+                 <a target="_top" href="git_reflog.asp">Git Reflog</a>
+                 -->
+                <br>
+                <h2 class="left"><span class="left_h2">Git</span> Exercises</h2>
+                <a target="_top" href="git_exercises.asp?remote=github" class="active">Git Exercises</a><br>
+                <a target="_top" href="git_quiz.asp?remote=github">Git Quiz</a>
+                <br><br>
+              </div>
+            </div>
+          </nav>
+
+          <div class="mainContent-wrap-ul">
+            <section class="mainContent">
+              <h1> Введение в Git и Github </h1>
+              <hr>
+              <h2>Что такое Git?</h2>
+              <p>Git - популярная система контроля версий. Он был создан Линусом Торвальдсом в 2005 году и с тех пор поддерживается Хунио Хамано.</p>
+              <p>Он используется для:</p>
+              <ul>
+                <li>Отслеживание изменений кода</li>
+                <li>Отслеживание того, кто внес изменения</li>
+                <li>Сотрудничество в области разработки проекта</li>
+              </ul>
+              <h3>Что делает git?</h3>
+              <ul>
+                <li>Управление проектами с помощью <strong>Repositories</strong></li>
+                <li><strong>Clone</strong> проект для работы с локальной копией</li>
+                <li>Контролирует и отслеживает изменения с помощью <strong>Staging</strong> and <strong>Committing</strong></li>
+                <li><strong>Branch</strong> and <strong>Merge</strong> чтобы обеспечить возможность работы над различными частями и версиями проекта</li>
+                <li><strong>Pull</strong> последнюю версию проекта в локальную копию</li>
+                <li><strong>Push</strong> локальные обновления основного проекта</li>
+              </ul>
+              <h3>Работа с Git</h3>
+              <ul>
+                <li>Инициализируйте Git в папке, сделав ее <strong>Repository</strong></li>
+                <li>Git теперь создает скрытую папку, чтобы отслеживать изменения в этой папке</li>
+                <li>Когда файл изменяется, добавляется или удаляется, он считается <strong>modified</strong></li>
+                <li>Вы выбираете измененные файлы, которые хотите сохранить <strong>Stage</strong></li>
+                <li>The <strong>Staged</strong> files are <strong>Committed</strong>, which prompts Git to store a <strong>permanent</strong> snapshot of the files</li>
+                <li>Git позволяет вам просматривать полную историю каждого коммита.</li>
+                <li>Вы можете вернуться к любому предыдущему снимку.</li>
+                <li>Git не хранит отдельную копию каждого файла в каждом снимке, но отслеживает изменения, внесенные в каждый снимок!</li>
+              </ul>
+              <h3>Почему Git?</h3>
+              <ul>
+                <li>Более 70% разработчиков используют Git!</li>
+                <li>Разработчики могут работать вместе из любой точки мира.</li>
+                <li>Разработчики могут ознакомиться с полной историей проекта.</li>
+                <li>Разработчики могут вернуться к более ранним версиям проекта.</li>
+              </ul>
+              <h3>Что такое GitHub?</h3>
+              <ul>
+                <li>Git - это не то же самое, что GitHub.</li>
+                <li>GitHub создает инструменты, использующие Git.</li>
+                <li>GitHub является крупнейшим хранилищем исходного кода в мире и принадлежит Microsoft с 2018 года.</li>
+                <li>В этом руководстве мы сосредоточимся на использовании Git с GitHub.</li>
+              </ul>
+
+<!--            === NEXTPREV BUTTONS ===-->
+            <div class="w3-clear nextprev">
+              <a class="w3-left w3-btn" href="{% url 'exercise' %}">❮ Previous</a>
+              <a class="w3-right w3-btn" href="{% url 'exercise3' %}">Next ❯</a>
+            </div>
+          </section>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
