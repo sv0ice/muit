@@ -28,21 +28,19 @@
               </a>
               </li>
               <li class="menu__item">
-                <a class="menu__link" href="#">
-                  ДОП. УСЛУГИ
-              </a>
-              </li>
-              <li class="menu__item">
                 <a class="menu__link" href="{% url 'about_us' %}">
                   О НАС
               </a>
               </li>
+            <li class="menu__item">
+                <a class="menu__link" href="{% url 'register' %}">РЕГИСТРАЦИЯ</a> | <a class="menu__link" href="{% url 'login' %}">ВОЙТИ</a>
+              </li>
             </ul>
           </nav>
 
-          <button class="login">
-            <a href="{% url 'login' %}">
-            <img class="login__img" src="{% static 'main/image/login.png' %}" alt="login img" >
+          <button class="cabinet">
+            <a href="{% url 'cabinet' %}">
+            <img class="login__img" src="{% static 'main/image/login.png' %}" alt="cabinet img" >
             </a>
           </button>
         </div>
