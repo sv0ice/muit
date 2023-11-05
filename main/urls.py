@@ -1,5 +1,8 @@
 from django.urls import path
 from . import views
+from .views import RegisterUser
+
+# from views import *
 
 urlpatterns = [
     path('', views.index, name='home'),
@@ -16,7 +19,9 @@ urlpatterns = [
     path('output3', views.run_script_ex3, name='run_script_ex3'),
     path('output4', views.run_script_ex4, name='run_script_ex4'),
     path('output5', views.run_script_ex5, name='run_script_ex5'),
+    path('register', RegisterUser.as_view(), name='register'),
     path('login', views.login, name='login'),
+    path('cabinet', views.cabinet, name='cabinet'),
     # path('questions/<int:question_id>', views.question_detail, name='question_detail'),
     # path('questions/<int:question_id>/answer', views.answer_question, name='answer_question'),
 ]
