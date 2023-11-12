@@ -33,17 +33,29 @@
                 О НАС
               </a>
             </li>
-          <li class="menu__item">
+            {% if request.user.is_authenticated %}
+            <li class="menu__item">
+              <a class="menu__link" href="{% url 'logout' %}">ВЫЙТИ</a>
+            </li>
+            {% else %}
+            <li class="menu__item">
                 <a class="menu__link" href="{% url 'register' %}">РЕГИСТРАЦИЯ</a> | <a class="menu__link" href="{% url 'login' %}">ВОЙТИ</a>
-              </li>
+            </li>
+            {% endif %}
             </ul>
           </nav>
 
-          <button class="cabinet">
-            <a href="{% url 'cabinet' %}">
-            <img class="login__img" src="{% static 'main/image/login.png' %}" alt="cabinet img" >
+            {% if request.user.is_authenticated %}
+            <a class="cabinet__flex" href="{% url 'cabinet' %}">
+            <img class="login__img" src="{% static 'main/image/cabinet_24.png' %}" alt="cabinet img" >
+            <div class="menu__link">{{user.username}}</div>
             </a>
-          </button>
+            {% else %}
+            <a class="cabinet__flex" href="{% url 'login' %}">
+            <img class="login__img" src="{% static 'main/image/cabinet_24.png' %}" alt="cabinet img" >
+            <div class="menu__link">Требуется Вход</div>
+            </a>
+            {% endif %}
       </div>
 
 
@@ -150,14 +162,22 @@
               <h2>Test Yourself With Exercises</h2>
               <div class="exercisewindow">
                 <h2>Exercise:</h2>
+
                 <p>Вставьте недостающую часть команды, чтобы проверить, какая версия Git (если таковая имеется) установлена.</p>
                 <div class="exerciseprecontainer">
                 <pre>git <input type="text" name="input" maxlength="9" style="width: 100px;"></pre>
+                  <div id="result">
+                  {% if result %}
+                   {{ result }}
+                  {% endif %}
+                  </div>
                 </div>
                 <br>
                 <button type="submit" class="w3-btn w3-margin-bottom">Submit Answer »</button>
               </div>
             </form>
+
+
 
 <!--            === NEXTPREV BUTTONS ===-->
             <div class="w3-clear nextprev">
@@ -175,6 +195,5 @@
 </header>
 
   <script src="script.js"></script>
-
 </body>
 </html>

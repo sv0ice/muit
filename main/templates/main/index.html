@@ -35,24 +35,36 @@
                   О НАС
               </a>
               </li>
+              {% if request.user.is_authenticated %}
+              <li class="menu__item">
+                <a class="menu__link" href="{% url 'logout' %}">ВЫЙТИ</a>
+              </li>
+              {% else %}
               <li class="menu__item">
                 <a class="menu__link" href="{% url 'register' %}">РЕГИСТРАЦИЯ</a> | <a class="menu__link" href="{% url 'login' %}">ВОЙТИ</a>
               </li>
+              {% endif %}
             </ul>
           </nav>
 
-          <button class="cabinet">
-            <a href="{% url 'cabinet' %}">
-            <img class="login__img" src="{% static 'main/image/login.png' %}" alt="cabinet img" >
+            {% if request.user.is_authenticated %}
+            <a class="cabinet__flex" href="{% url 'cabinet' %}">
+            <img class="login__img" src="{% static 'main/image/cabinet_24.png' %}" alt="cabinet img" >
+            <div class="menu__link">{{user.username}}</div>
             </a>
-          </button>
+            {% else %}
+            <a class="cabinet__flex" href="{% url 'login' %}">
+            <img class="login__img" src="{% static 'main/image/cabinet_24.png' %}" alt="cabinet img" >
+            <div class="menu__link">Требуется Вход</div>
+            </a>
+            {% endif %}
         </div>
 
         <div class="header__content">
           <h2 class="main__h2">Введение в Git</h2>
           <p>Git — это распределенная система контроля версий, широко используемая для контроля версий и совместной работы над проектами.</p>
 
-          <h2 class="main__h2">Basic Git Commands</h2>
+          <h2 class="main__h2">Базовые Git команды</h2>
           <ul class="content__list">
             <li class="content__item">git init - инициализирует гит репозиторий.</li>
             <li class="content__item">git clone - клонирует репозиторий на локальную машину</li>
@@ -62,10 +74,10 @@
             <li class="content__item">git pull - извлекает последние изменения с удаленного сервера.</li>
           </ul>
 
-          <h2 class="main__h2">Working with Branches</h2>
+          <h2 class="main__h2">Работа с ветками</h2>
           <p>Git позволяет создавать ветки и управлять ими, упрощая параллельную разработку и интеграцию изменений.</p>
 
-          <h2 class="main__h2">Additional Resources</h2>
+          <h2 class="main__h2">Дополнительные ресурсы</h2>
           <ul class="content__list">
             <li class="content__item"><a href="https://git-scm.com/doc">Official Git Documentation</a></li>
             <li class="content__item"><a href="https://learngitbranching.js.org/">Interactive Git Tutorial</a></li>
