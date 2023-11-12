@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import RegisterUser
+from .views import RegisterUser, LoginUser
 
 # from views import *
 
@@ -20,7 +20,8 @@ urlpatterns = [
     path('output4', views.run_script_ex4, name='run_script_ex4'),
     path('output5', views.run_script_ex5, name='run_script_ex5'),
     path('register', RegisterUser.as_view(), name='register'),
-    path('login', views.login, name='login'),
+    path('login', LoginUser.as_view(), name='login'),
+    path('logout', views.logout_user, name='logout'),
     path('cabinet', views.cabinet, name='cabinet'),
     # path('questions/<int:question_id>', views.question_detail, name='question_detail'),
     # path('questions/<int:question_id>/answer', views.answer_question, name='answer_question'),

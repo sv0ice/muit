@@ -1,3 +1,4 @@
+from django.contrib.auth import logout
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, get_object_or_404
 # from .models import Lesson, Question
@@ -6,7 +7,8 @@ from django.contrib import messages
 from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView
-
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.views import LoginView
 from .forms import *
 from .models import *
 from .utils import *
@@ -45,6 +47,7 @@ def exercise7(request):
 
 
 def run_script_ex1(request):
+    result = None
     if request.method == 'POST':
         # print(request.text)
         input_value = request.POST.get('input')
@@ -52,53 +55,57 @@ def run_script_ex1(request):
         # ...
         # print(input_value)
         if input_value is None:
-            return HttpResponse('Input value is missing')
+            result = 'Введите ответ!'
 
-        if input_value == '--version':
-            return HttpResponse('CORRECT!')
+        elif input_value == '--version':
+            # return redirect(request.META.get('HTTP_REFERER','redirect_if_referer_not_found'))
+            result = 'Правильный ответ!'
         else:
             # print(input_value)
-            return HttpResponse('NOT CORRECT!')
+            result = 'Неправильный ответ, прочтите лекцию еще раз!'
         # return HttpResponse('Script executed successfully')
-    else:
-        return render(request, 'main/exercise.html')
+
+    return render(request, 'main/exercise.html', {'result': result})
 
 
 def run_script_ex2(request):
+    result = None
     if request.method == 'POST':
         input_value = request.POST.get('input')
         # Run your Python script here using the input_value
         # ...
         if input_value is None:
-            return HttpResponse('Input value is missing')
+            result = 'Введите ответ!'
 
-        if input_value == 'status':
-            return HttpResponse('CORRECT!')
+        elif input_value == 'status':
+            result = 'Правильный ответ!'
         else:
-            return HttpResponse('NOT CORRECT!')
+            result = 'Неправильный ответ, прочтите лекцию еще раз!'
         # return HttpResponse('Script executed successfully')
-    else:
-        return render(request, 'main/exercise4.html')
+
+    return render(request, 'main/exercise_lib/exercise4.html', {'result': result})
 
 
 def run_script_ex3(request):
+    result = None
     if request.method == 'POST':
         input_value = request.POST.get('input')
         # Run your Python script here using the input_value
         # ...
         if input_value is None:
-            return HttpResponse('Input value is missing')
+            result = 'Введите ответ!'
 
         if input_value == 'add':
-            return HttpResponse('CORRECT!')
+            result = 'Правильный ответ!'
         else:
-            return HttpResponse('NOT CORRECT!')
+            result = 'Неправильный ответ, прочтите лекцию еще раз!'
         # return HttpResponse('Script executed successfully')
-    else:
-        return render(request, 'main/exercise4.html')
+
+    return render(request, 'main/exercise_lib/exercise5.html', {'result': result})
 
 
 def run_script_ex4(request):
+    result = None
     if request.method == 'POST':
         input_value1 = request.POST.get('input1')
         input_value2 = request.POST.get('input2')
@@ -106,33 +113,34 @@ def run_script_ex4(request):
         # ...
         if input_value1 is None:
             if input_value2 is None:
-                return HttpResponse('Input value is missing')
-            return HttpResponse('Input value is missing')
+                result = 'Введите ответ!'
+            result = 'Введите ответ!'
 
         if input_value1 == 'commit' and input_value2 == '-m':
-            return HttpResponse('CORRECT!')
+            result = 'Правильный ответ!'
         else:
-            return HttpResponse('NOT CORRECT!')
+            result = 'Неправильный ответ, прочтите лекцию еще раз!'
         # return HttpResponse('Script executed successfully')
-    else:
-        return render(request, 'main/exercise4.html')
+
+    return render(request, 'main/exercise_lib/exercise6.html', {'result': result})
 
 
 def run_script_ex5(request):
+    result = None
     if request.method == 'POST':
         input_value = request.POST.get('input')
         # Run your Python script here using the input_value
         # ...
         if input_value is None:
-            return HttpResponse('Input value is missing')
+            result = 'Введите ответ!'
 
         if input_value == 'help':
-            return HttpResponse('CORRECT!')
+            result = 'Правильный ответ!'
         else:
-            return HttpResponse('NOT CORRECT!')
+            result = 'Неправильный ответ, прочтите лекцию еще раз!'
         # return HttpResponse('Script executed successfully')
-    else:
-        return render(request, 'main/exercise4.html')
+
+    return render(request, 'main/exercise_lib/exercise7.html', {'result': result})
 
 def about_us(request):
     return render(request, 'main/about.html')
@@ -140,11 +148,11 @@ def about_us(request):
 def register(request):
     return render(request, 'main/register.html')
 
-def login(request):
-    return render(request, 'main/register.html')
+# def login(request):
+#     return render(request, 'main/register.html')
 
 def cabinet(request):
-    return render(request, 'main/register.html')
+    return render(request, 'main/cabinet.html')
 
 class RegisterUser(CreateView):
     form_class = RegisterUserForm
@@ -154,6 +162,24 @@ class RegisterUser(CreateView):
     def get_context_data(self, *, object_list=None,**kwargs):
         context = super().get_context_data(**kwargs)
         return dict(list(context.items()))
+
+
+class LoginUser(LoginView):
+    form_class = AuthenticationForm
+    template_name = 'main/login.html'
+
+    def get_context_data(self, *, object_list=None,**kwargs):
+        context = super().get_context_data(**kwargs)
+        return dict(list(context.items()))
+
+    def get_success_url(self):
+        return reverse_lazy('home')
+
+
+def logout_user(request):
+    logout(request)
+    return redirect('login')
+
 
 # def lesson_list(request):
 #     lessons = Lesson.objects.all()
