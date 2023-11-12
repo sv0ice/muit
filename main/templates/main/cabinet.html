@@ -1,10 +1,105 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обучение Git</title>
+<!--     <link rel="stylesheet" href="{% static 'main/css/reset.css' %}">-->
+<!--     <link rel="stylesheet" href="{% static 'main/css/slick.css' %}">-->
+<!--     <link rel="stylesheet" href="{% static 'main/css/jquery.fancybox.css' %}">-->
+     <link rel="stylesheet" href="{% static 'main/css/bg.css' %}">
+     <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
 </head>
-<body>
-$END$
+<body id="bg" style="background-image: url('{% static 'main/image/main_bg.jpg' %}');">
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+
+        <div class="header__top">
+          <nav class="menu">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a class="menu__link" href="{% url 'home' %}">
+                  ГЛАВНОЕ МЕНЮ
+              </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="{% url 'exercise' %}">
+                  УПРАЖНЕНИЯ
+              </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="{% url 'about_us' %}">
+                  О НАС
+              </a>
+              </li>
+              {% if request.user.is_authenticated %}
+              <li class="menu__item">
+                <a class="menu__link" href="{% url 'logout' %}">ВЫЙТИ</a>
+              </li>
+              {% else %}
+              <li class="menu__item">
+                <a class="menu__link" href="{% url 'register' %}">РЕГИСТРАЦИЯ</a> | <a class="menu__link" href="{% url 'login' %}">ВОЙТИ</a>
+              </li>
+              {% endif %}
+            </ul>
+          </nav>
+
+            <a class="cabinet__flex" href="{% url 'cabinet' %}">
+            <img class="login__img" src="{% static 'main/image/cabinet_24.png' %}" alt="cabinet img" >
+            <div class="menu__link">{{user.username}}</div>
+            </a>
+
+        </div>
+
+        <div class="header__content">
+          <h2 class="main__h2">Личный кабинет</h2>
+          <section>
+            <h2>Информация о пользователе</h2>
+            <div class="user-info">
+              <p><strong>Логин:</strong> {{user.username}}</p>
+              <p><strong>Имя:</strong> {{user.first_name}}</p>
+              <p><strong>Фамилия:</strong> {{user.last_name}}</p>
+              <p><strong>Email:</strong> {{user.email}}</p>
+            <!-- Добавьте другие данные о пользователе по необходимости -->
+            </div>
+          </section>
+          <section>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+          </section>
+        </div>
+
+<!--        <aside class="input_cmd">-->
+<!--          <h2 class="main__h2">Git Command Window</h2>-->
+<!--          <textarea id="git-command"></textarea>-->
+<!--          <button onclick="runGitCommand()">Run Command</button>-->
+<!--          <div id="output"></div>-->
+<!--        </aside>-->
+
+      </div>
+    </div>
+  </header>
+
+  <script src="script.js"></script>
+
 </body>
 </html>
