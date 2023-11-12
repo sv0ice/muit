@@ -38,6 +38,13 @@
             </ul>
           </nav>
 
+<!--          <button class="cabinet">-->
+<!--            <a href="{% url 'cabinet' %}">-->
+<!--            <img class="login__img" src="{% static 'main/image/login.png' %}" alt="cabinet img" >-->
+<!--            </a>-->
+<!--          </button>-->
+
+
           <a class="cabinet__flex" href="{% url 'login' %}">
             <img class="login__img" src="{% static 'main/image/cabinet_24.png' %}" alt="cabinet img" >
             <div class="menu__link">Требуется Вход</div>
@@ -55,7 +62,7 @@
                   <p><label class="form-label" >{{f.label}}: </label>{{ f }}</p>
                   <div class="form-error">{{ f.errors }}</div>
                   {% endfor %}
-                    <button type="submit">Регистрация</button>
+                    <button type="submit">Войти</button>
                   </form>
 <!--                <form id="register-form" method="post">-->
 <!--                  <div class="form-group">-->
