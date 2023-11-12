@@ -68,6 +68,11 @@ body{
     margin-right: 30px;
 }
 
+.cabinet__flex {
+    display: flex;
+    margin-right: 30px;
+}
+/* ===== HEADER CONTENT ===== */
 .header__content {
     color: #fff;
     background-color: #333;
@@ -92,6 +97,12 @@ h2 {
     border: 1px solid #ccc;
   }
   */
+.user-info, .user-textarea {
+  /*background-color: #f9f9f9;*/
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
 
   .content__list {
     list-style-type: disc;
@@ -246,11 +257,17 @@ ul {
 }
 
 .exerciseprecontainer {
+    display: flex;
     background-color: #E7E9EB;
     padding: 16px;
     font-size: 120%;
     font-family: Consolas,Menlo,"Courier New", Courier, monospace;
     overflow: auto;
+    align-items: center;
+}
+
+#result {
+    margin-left: 30px;
 }
 
 .exerciseprecontainer input {
