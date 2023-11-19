@@ -173,7 +173,11 @@
                   </div>
                 </div>
                 <br>
+                {% if request.user.is_authenticated %}
                 <button type="submit" class="w3-btn w3-margin-bottom">Submit Answer »</button>
+                {% else %}
+                <div class="auth_required">Требуется вход !</div>
+                {% endif %}
               </div>
             </form>
 
@@ -194,6 +198,6 @@
   </div>
 </header>
 
-  <script src="script.js"></script>
+<!--  <script src="script.js"></script>-->
 </body>
 </html>

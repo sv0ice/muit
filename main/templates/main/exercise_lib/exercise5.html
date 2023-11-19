@@ -163,7 +163,11 @@
                   </div>
                 </div>
                 <br>
+                {% if request.user.is_authenticated and answer2 == "Выполнено!" %}
                 <button type="submit" class="w3-btn w3-margin-bottom">Submit Answer »</button>
+                {% else %}
+                <div class="auth_required">Требуется вход / Выполните предыдущую задачу!</div>
+                {% endif %}
               </div>
             </form>
 
