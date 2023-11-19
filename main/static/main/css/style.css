@@ -276,6 +276,13 @@ ul {
     height: 1.3em;
 }
 
+.auth_required{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default; /* cursor: pointer; */
+}
+
 .w3-margin-bottom {
     margin-bottom: 16px!important;
 }
@@ -286,6 +293,8 @@ ul {
     font-family: 'Source Sans Pro', sans-serif;
     padding: 7px 18px;
 }
+
+
 
 .w3-btn, .w3-btn:link, .w3-btn:visited {
     color: #FFFFFF;
