@@ -35,40 +35,47 @@ def exercise3(request):
 
 
 def exercise4(request):
-    request.session['mid'] = request.user.id
-    uid = request.session['mid']
-    userobj = User.objects.get(id=uid)
-    answer1 = Question.objects.filter(user=userobj).values('answer1').last()
+    if request.user.is_authenticated:
+        request.session['mid'] = request.user.id
+        uid = request.session['mid']
+        userobj = User.objects.get(id=uid)
+        answer1 = Question.objects.filter(user=userobj).values('answer1').last()
 
-    return render(request, 'main/exercise_lib/exercise4.html', {'answer1': answer1['answer1']})
+        return render(request, 'main/exercise_lib/exercise4.html', {'answer1': answer1['answer1']})
+    else:
+        return render(request, 'main/exercise_lib/exercise4.html')
 
 
 def exercise5(request):
-    request.session['mid'] = request.user.id
-    uid = request.session['mid']
-    userobj = User.objects.get(id=uid)
-    answer2 = Question.objects.filter(user=userobj).values('answer2').last()
+    if request.user.is_authenticated:
+        request.session['mid'] = request.user.id
+        uid = request.session['mid']
+        userobj = User.objects.get(id=uid)
+        answer2 = Question.objects.filter(user=userobj).values('answer2').last()
 
-    return render(request, 'main/exercise_lib/exercise5.html', {'answer2': answer2['answer2']})
+        return render(request, 'main/exercise_lib/exercise5.html', {'answer2': answer2['answer2']})
+    return render(request, 'main/exercise_lib/exercise5.html')
 
 
 def exercise6(request):
-    request.session['mid'] = request.user.id
-    uid = request.session['mid']
-    userobj = User.objects.get(id=uid)
-    answer3 = Question.objects.filter(user=userobj).values('answer3').last()
+    if request.user.is_authenticated:
+        request.session['mid'] = request.user.id
+        uid = request.session['mid']
+        userobj = User.objects.get(id=uid)
+        answer3 = Question.objects.filter(user=userobj).values('answer3').last()
 
-    return render(request, 'main/exercise_lib/exercise6.html', {'answer3': answer3['answer3']})
-
+        return render(request, 'main/exercise_lib/exercise6.html', {'answer3': answer3['answer3']})
+    return render(request, 'main/exercise_lib/exercise6.html')
 
 def exercise7(request):
-    request.session['mid'] = request.user.id
-    uid = request.session['mid']
-    userobj = User.objects.get(id=uid)
-    answer4 = Question.objects.filter(user=userobj).values('answer4').last()
+    if request.user.is_authenticated:
+        request.session['mid'] = request.user.id
+        uid = request.session['mid']
+        userobj = User.objects.get(id=uid)
+        answer4 = Question.objects.filter(user=userobj).values('answer4').last()
 
-    return render(request, 'main/exercise_lib/exercise7.html', {'answer4': answer4['answer4']})
-
+        return render(request, 'main/exercise_lib/exercise7.html', {'answer4': answer4['answer4']})
+    return render(request, 'main/exercise_lib/exercise7.html')
 
 
 def run_script_ex1(request):
@@ -337,6 +344,11 @@ def cabinet(request):
         # answer4 = Question.objects.filter(user=userobj, answer4="Правильный ответ!")
         # answer5 = Question.objects.filter(user=userobj, answer5="Правильный ответ!")
         # answers = Question.objects.all()
+
+    if answer1 is None:
+        q = Question(user=userobj, answer1="Не выполнено!", answer2="Не выполнено!", answer3="Не выполнено!",
+                     answer4="Не выполнено!", answer5="Не выполнено!")
+        q.save()
 
     data = {
         'answer1': answer1['answer1'],
